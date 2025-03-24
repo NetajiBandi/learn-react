@@ -13,12 +13,24 @@
 
     <script type="text/babel">
         function HelloWorld() {
-            return <h1>Hello, World!</h1>;
+            return <h1>Hello, World from function component!</h1>;
+        }
+
+        class HelloWorldClass extends React.Component {
+            render() {
+                return (
+                    <>
+                        <HelloWorld />
+                        <h1>
+                            Hello, World from class component!
+                        </h1>
+                    </>);
+            }
         }
 
         const container = document.getElementById('react-app');
         const root = ReactDOM.createRoot(container)
-        root.render(<HelloWorld />);
+        root.render(<HelloWorldClass />);
     </script>
 </body>
 
