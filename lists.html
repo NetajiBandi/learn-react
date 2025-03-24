@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lists</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="react-app"></div>
+
+    <script type="text/babel">
+        function ListOfItems() {
+            const items = ['first item', 'second item', 'third item', 'fourth item'];
+            const itemElements = items.map((item) => <li>{item}</li>);
+            return <>
+                <h1>Items:</h1>
+                {itemElements}
+            </>;
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('react-app'));
+        root.render(<ListOfItems />);
+    </script>
+</body>
+
+</html>
