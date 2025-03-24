@@ -14,10 +14,10 @@
     <script type="text/babel">
         function ListOfItems() {
             const items = ['first item', 'second item', 'third item', 'fourth item'];
-            const itemElements = items.map((item) => <li>{item}</li>);
+            const itemElements = items.map((item, i) => <li key={i}>{item}</li>);
             return <>
                 <h1>Items:</h1>
-                {itemElements}
+                <ul>{itemElements}</ul>
             </>;
         }
 
