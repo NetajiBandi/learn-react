@@ -12,8 +12,9 @@
     <div id="react-app"></div>
 
     <script type="text/babel">
-        function ShowItem(e) {
-            alert('Showing: ' + e.target.parentNode.innerText);
+        function ShowItem(item) {
+            // alert('Showing: ' + e.target.parentNode.innerText);
+            alert('Showing: ' + item);
         }
 
         function ListOfItems() {
@@ -23,7 +24,7 @@
                     <li>
                         <p>
                             <span>{item}</span>
-                            <input type='button' value='Show' onClick={ShowItem} />
+                            <input type='button' value='Show' onClick={() => ShowItem(item)} />
                         </p>
                     </li>
                 </React.Fragment>);
