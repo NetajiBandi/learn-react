@@ -12,9 +12,21 @@
     <div id="react-app"></div>
 
     <script type="text/babel">
+        function ShowItem(e) {
+            alert('Showing: ' + e.target.parentNode.innerText);
+        }
+
         function ListOfItems() {
             const items = ['first item', 'second item', 'third item', 'fourth item'];
-            const itemElements = items.map((item, i) => <li key={i}>{item}</li>);
+            const itemElements = items.map((item, index) =>
+                <React.Fragment key={index}>
+                    <li>
+                        <p>
+                            <span>{item}</span>
+                            <input type='button' value='Show' onClick={ShowItem} />
+                        </p>
+                    </li>
+                </React.Fragment>);
             return <>
                 <h1>Items:</h1>
                 <ul>{itemElements}</ul>
